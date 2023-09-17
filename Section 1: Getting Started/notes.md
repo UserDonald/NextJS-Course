@@ -1,109 +1,119 @@
-# What is Next.js? And why would you use it?
+# Next.js Cheat Sheet
 
-Next.js is a framework for building production-ready applications with React. Here we explore why you might choose Next.js for your React projects and delve into its key feature of server-side page pre-rendering.
+## Introduction
 
-## Overview
+### What is Next.js?
 
-### React
+Next.js is the React framework designed to make the process of building production-ready React apps simpler and more efficient. It is fundamentally focused on enhancing the user interface.
 
-- **Definition**: A JavaScript library focused solely on building user interfaces.
-- **Core Concepts**:
+```jsx
+// Next.js uses the power of React to help you build your user interfaces
+function HelloWorld() {
+  return <div>Hello, world!</div>;
+}
+```
 
-  - **Components**: Modular and reusable UI units.
-    ```jsx
-    function Welcome(props) {
-      return <h1>Hello, {props.name}</h1>;
-    }
-    ```
-  - **States**: Variables which hold data and determine the component behavior.
+### Why use Next.js?
 
-    ```jsx
-    class Counter extends React.Component {
-      state = { count: 0 };
+- **Full-stack Framework**: Unlike React which is just a JavaScript library focusing on building user interfaces, Next.js offers a full-stack framework solution, helping to resolve common issues encountered in React development more easily.
+- **Built-in Features**: Next.js comes with built-in features such as routing, which eliminates the need for additional libraries that are usually required when working with React.
+- **Production-Ready**: Next.js aims to solve issues that you will frequently encounter when building production-ready React apps, providing you with a robust solution for large-scale applications.
 
-      render() {
-        return <div>{this.state.count}</div>;
-      }
-    }
-    ```
+```jsx
+// For instance, Next.js provides a Link component to make routing simpler
+import Link from 'next/link';
 
-  - **Props**: Parameters passed to components to influence their behavior and rendering output.
-    ```jsx
-    function Welcome(props) {
-      return <h1>Hello, {props.name}</h1>;
-    }
-    ```
+function Navigation() {
+  return (
+    <nav>
+      <Link href="/">Home</Link>
+      <Link href="/about">About</Link>
+    </nav>
+  );
+}
+```
 
-### Next.js
+## Key Features
 
-- **Definition**: Enhances React by offering a feature-rich environment for developing large-scale applications.
-- **Benefits**:
+### Server-Side Page (Pre-)Rendering
 
-  - **Built-in Routing**:
+#### **Built-in Server-side Rendering Support**
 
-    ```jsx
-    import Link from 'next/link';
+- **SEO and Initial Load Benefits**: Preparing content server-side, as opposed to client-side, enhances SEO and improves the initial load time.
+- **Enhanced Data Reading**: Solves the issue of search engine crawlers being unable to read your data, a common problem when HTML code sent from server to client is practically empty.
 
-    function Home() {
-      return (
-        <div>
-          Welcome to Next.js!
-          <Link href="/about">About</Link>
-        </div>
-      );
-    }
-    ```
+```jsx
+// In Next.js, you can easily fetch data server-side using `getServerSideProps`
+export async function getServerSideProps(context) {
+  const response = await fetch('https://api.example.com/data');
+  const data = await response.json();
 
-### Production Ready with Next.js
+  return {
+    props: { data },
+  };
+}
 
-- **Features**:
-  - **Core Features by Default**: Next.js comes with many features that help build production-ready apps, saving time and effort.
-  - **Guidance**: Clear guidelines and documentation on how to use its features.
+function Page({ data }) {
+  return <div>Data: {JSON.stringify(data)}</div>;
+}
+```
 
-## Key Feature: Server-side Page (Pre-)Rendering
+#### **Server-Side Rendering**
 
-Next.js supports server-side rendering, enhancing SEO and improving load times. Let’s understand this concept in detail:
+- **Automatic Page Pre-Rendering**: Automates the process of pre-rendering pages to facilitate SEO and speed up the initial load time.
+- **Blending Client-Side and Server-Side**: Allows for data fetching on the server and rendering finished pages, combining the best of both client and server-side rendering.
 
-### Overview
+```jsx
+// Automatic pre-rendering is handled by Next.js, saving you time and effort
+function StaticPage() {
+  return <div>Static content</div>;
+}
+```
 
-- **React's Client-Side Rendering**:
-  - **Traditional Approach**:
-    ```jsx
-    ReactDOM.render(<App />, document.getElementById('root'));
-    ```
+### File-Based Routing
 
-### Detailed Breakdown
+- **Illusory Multipage Effect**: Creates an illusion of having multiple pages for the user.
+- **Code Efficiency**: Eliminates the need for extra code which is usually required when using npm packages like React Router, offering a more straightforward and less labor-intensive solution.
 
-- **Server-Side Rendering**:
+```jsx
+// File-based routing is straightforward: the file structure mirrors the URL structure
+// pages/index.js
+function HomePage() {
+  return <div>Welcome to the home page</div>;
+}
 
-  - **Next.js Solution**:
+// pages/about.js
+function AboutPage() {
+  return <div>About us</div>;
+}
+```
 
-    ```jsx
-    function Home({ data }) {
-      return <div>Welcome to my website! Here is my data: {data}</div>;
-    }
+### Build Fullstack React Apps
 
-    export async function getServerSideProps() {
-      const response = await fetch('https://api.example.com/data');
-      const data = await response.json();
+#### **Fullstack Capabilities**
 
-      return { props: { data } };
-    }
-    ```
+- **Backend Integration**: Easily integrates your own backend API into your React project using NodeJS code.
+- **Backend Code Addition**: Facilitates the addition of backend (server-side) code to your Next.js/React apps, aiding in functions such as data storage and retrieval, and authentication.
 
-- **Blending Client and Server-Side**:
+```jsx
+// With Next.js, it's simple to add backend logic to your React apps
+// pages/api/hello.js
+export default (req, res) => {
+  res.status(200).json({ name: 'John Doe' });
+};
+```
 
-  - **Fetching Data**:
+## React and Next.js
 
-    ```jsx
-    export async function getStaticProps() {
-      const res = await fetch('https://api.example.com/posts');
-      const posts = await res.json();
+- **Component-Based**: Both Next.js and React operate on a component-based structure, utilizing elements such as components, states, and props.
+- **React Enhancement**: While building with Next.js, you will still be writing React code and using React features; Next.js simply enhances your React apps by offering additional features.
 
-      return {
-        props: {
-          posts,
-        },
-      };
-    }
-    ```
+```jsx
+// You'll still be using fundamental React concepts, like components and props, in Next.js
+function Greeting({ name }) {
+  return <div>Hello, {name}</div>;
+}
+
+// Usage
+<Greeting name="World" />;
+```
