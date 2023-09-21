@@ -24,22 +24,13 @@ Understand the simplicity and effectiveness of using file-based routing as oppos
 
 Get an insight into how file-based routing operates and the significance of each file in the structure.
 
-<!-- Turn the following into a codeblock -->
-
-| /pages
-| index.js --> Main starting page ('/')
-| about.js --> About page ('/about')
-| -- /products
-| -- index.js --> All products page ('/products')
-| -- [id].js --> Product detail page ('/products/1234') 'Dynamic Path'
-
 ``` txt
-  | /pages
-  | index.js --> Main starting page ('/')
-  | about.js --> About page ('/about')
-  | -- /products
-  | -- index.js --> All products page ('/products')
-  | -- [id].js --> Product detail page ('/products/1234') 'Dynamic Path'
+/pages
+index.js --> Main starting page ('/')
+about.js --> About page ('/about')
+-- /products
+-- index.js --> All products page ('/products')
+-- [id].js --> Product detail page ('/products/1234') 'Dynamic Path'
 ```
 
 ### File-based vs Code-based Routing
