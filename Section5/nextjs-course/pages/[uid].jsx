@@ -9,10 +9,6 @@ export async function getServerSideProps(context) {
 
   const userId = params.uid;
 
-  console.log(
-    'This will log for ' + userId + ' whenever the page is refreshed.'
-  );
-
   return {
     props: {
       id: 'userid-' + userId,
