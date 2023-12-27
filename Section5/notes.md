@@ -78,7 +78,7 @@ export async function getStaticPaths() {
       { params: { id: '2' } },
       // ...additional paths with other `id` values
     ],
-    fallback: false // can be set to 'blocking' or 'true' for different handling strategies
+    fallback: false, // can be set to 'blocking' or 'true' for different handling strategies
   };
 }
 
@@ -87,7 +87,39 @@ export async function getStaticProps({ params }) {
   const data = fetchDataBasedOnId(params.id);
   return {
     props: {
-      ...data
+      ...data,
+    },
+  };
+}
+```
+
+
+### Server-Side Rendering (SSR)
+
+Server-Side Rendering is a feature in Next.js that allows pages to be rendered on the server for each incoming request. This method is particularly useful when the rendered content needs to be unique for each request or when you need access to the request object, such as for handling cookies or session data.
+
+## When to Use SSR
+
+- **Per-Request Rendering**: SSR is ideal when your page must be rendered with fresh data for every request.
+- **Access to Request Data**: If you need to access the request object on the server, SSR provides the capability to do so, allowing for operations based on cookies or other headers.
+
+### Implementing SSR in Next.js
+
+```javascript
+export async function getServerSideProps(context) {
+  // You have access to the `context` parameter which contains request details
+  // Here you can handle cookies, authentication, and perform data fetching
+  
+  // Example: Accessing cookies from the request
+  const { req } = context;
+  const cookies = req.headers.cookie;
+
+  // Fetch data or perform operations based on the request
+  // ...
+
+  return {
+    props: {
+      // Pass the required data as props to the page
     }
   };
 }
