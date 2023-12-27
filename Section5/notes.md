@@ -93,7 +93,6 @@ export async function getStaticProps({ params }) {
 }
 ```
 
-
 ### Server-Side Rendering (SSR)
 
 Server-Side Rendering is a feature in Next.js that allows pages to be rendered on the server for each incoming request. This method is particularly useful when the rendered content needs to be unique for each request or when you need access to the request object, such as for handling cookies or session data.
@@ -109,7 +108,7 @@ Server-Side Rendering is a feature in Next.js that allows pages to be rendered o
 export async function getServerSideProps(context) {
   // You have access to the `context` parameter which contains request details
   // Here you can handle cookies, authentication, and perform data fetching
-  
+
   // Example: Accessing cookies from the request
   const { req } = context;
   const cookies = req.headers.cookie;
@@ -120,7 +119,28 @@ export async function getServerSideProps(context) {
   return {
     props: {
       // Pass the required data as props to the page
-    }
+    },
   };
 }
 ```
+
+### Client-side Data Fetching
+
+# Data Handling in Pre-Rendering
+
+Not all data requires pre-rendering when building web applications. In certain scenarios, deferring data fetching to the client-side is more appropriate and efficient.
+
+## Cases Where Pre-Rendering Is Not Necessary
+
+- **High-Frequency Changes**: Data that changes rapidly, such as live stock prices, should not be pre-rendered as it can quickly become outdated.
+- **User-Specific Information**: Data that is unique to each user, like the last purchase in an online store, is typically fetched client-side to ensure personalization.
+- **Partial Page Data**: For situations where only a segment of the page needs dynamic data, pre-rendering the entire page might be excessive.
+
+## Alternative Data Fetching Strategies
+
+When pre-rendering isn't suitable, client-side data fetching remains a reliable approach.
+
+- **Client-Side Fetching**: Leveraging traditional client-side data fetching mechanisms, such as the `useEffect` hook combined with `fetch`, can effectively retrieve data after the initial page load.
+- **Dynamic Data Handling**: This method is particularly useful when server-side pre-rendering may not be feasible or when it's unnecessary for the given data requirements.
+
+Using client-side fetching when appropriate can result in improved performance and a better user experience, as it allows the rest of the page to load uninterrupted while fetching only the necessary data on demand.
