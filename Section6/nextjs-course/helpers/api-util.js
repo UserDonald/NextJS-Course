@@ -1,5 +1,7 @@
 export async function getAllEvents() {
-  const response = await fetch(URL);
+  const response = await fetch(
+    'https://nextjs-tutorial-c1c57-default-rtdb.firebaseio.com/events.json'
+  );
   const data = await response.json();
 
   let events = [];
