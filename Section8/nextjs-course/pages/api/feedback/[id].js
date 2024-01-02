@@ -1,11 +1,11 @@
-import { buildFeedbackPath, extractFeedback } from './feedback';
+import { buildFeedbackPath, extractFeedback } from '.';
 
 function handler(req, res) {
   if (req.method === 'DELETE') {
     // Delete feedback relative to the feedbackId
   }
 
-  const feedbackId = req.query.feedbackId;
+  const feedbackId = req.query.id;
   const filePath = buildFeedbackPath();
   const feedbackData = extractFeedback(filePath);
   const selectedFeedback = feedbackData.find(
