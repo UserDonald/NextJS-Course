@@ -14,9 +14,8 @@ function FilteredEventsPage(props) {
 
   const filterData = router.query.slug;
 
-  const { data, error } = useSWR(
-    'https://nextjs-project-fa781-default-rtdb.firebaseio.com/sales.json',
-    (url) => fetch(url).then(res => res.json())
+  const { data, error } = useSWR(process.env.NEXT_PUBLIC_FIREBASE_URL, (url) =>
+    fetch(url).then((res) => res.json())
   );
 
   useEffect(() => {
@@ -37,7 +36,7 @@ function FilteredEventsPage(props) {
   let pageHeadData = (
     <Head>
       <title>Filtered Events</title>
-      <meta name='description' content={`A list of filtered events.`} />
+      <meta name="description" content={`A list of filtered events.`} />
     </Head>
   );
 
@@ -45,7 +44,7 @@ function FilteredEventsPage(props) {
     return (
       <Fragment>
         {pageHeadData}
-        <p className='center'>Loading...</p>
+        <p className="center">Loading...</p>
       </Fragment>
     );
   }
@@ -60,7 +59,7 @@ function FilteredEventsPage(props) {
     <Head>
       <title>Filtered Events</title>
       <meta
-        name='description'
+        name="description"
         content={`All events for ${numMonth}/${numYear}.`}
       />
     </Head>
@@ -81,8 +80,8 @@ function FilteredEventsPage(props) {
         <ErrorAlert>
           <p>Invalid filter. Please adjust your values!</p>
         </ErrorAlert>
-        <div className='center'>
-          <Button link='/events'>Show All Events</Button>
+        <div className="center">
+          <Button link="/events">Show All Events</Button>
         </div>
       </Fragment>
     );
@@ -103,8 +102,8 @@ function FilteredEventsPage(props) {
         <ErrorAlert>
           <p>No events found for the chosen filter!</p>
         </ErrorAlert>
-        <div className='center'>
-          <Button link='/events'>Show All Events</Button>
+        <div className="center">
+          <Button link="/events">Show All Events</Button>
         </div>
       </Fragment>
     );
