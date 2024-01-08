@@ -37,6 +37,3 @@ next-env.d.ts
 
 # environment
 .env
-
-# github
-next.config.js
