@@ -27,7 +27,7 @@ To create an API Route, you add a JavaScript file in the `pages/api` directory. 
 
 #### Example: Simple API Route
 
-```jsx
+```js
 // pages/api/hello.js
 export default function handler(req, res) {
   res.status(200).json({ message: 'Hello from Next.js!' });
@@ -46,7 +46,7 @@ You can fetch data from your API Routes in your React components similar to how 
 
 #### Example: Fetching Data from an API Route
 
-```jsx
+```js
 // pages/index.js
 import { useEffect, useState } from 'react';
 

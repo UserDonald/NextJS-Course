@@ -21,7 +21,7 @@ Use `getStaticProps` to fetch data at build time. It’s executed on the server-
 
 #### Example: Fetching Data with `getStaticProps`
 
-```jsx
+```js
 // pages/index.js
 export async function getStaticProps() {
   const data = await fetchData();
@@ -43,7 +43,7 @@ Use `getServerSideProps` to fetch data on each request. It’s executed on the s
 
 #### Example: Fetching Data with `getServerSideProps`
 
-```jsx
+```js
 // pages/profile.js
 export async function getServerSideProps(context) {
   const data = await fetchUserData(context.params.id);
@@ -65,7 +65,7 @@ Utilize React hooks like `useState` and `useEffect` to fetch data on the client 
 
 #### Example: Client-Side Data Fetching
 
-```jsx
+```js
 // components/StockPrices.js
 import { useState, useEffect } from 'react';
 
@@ -94,7 +94,7 @@ ISR allows you to update static content after you've built your site. Use `reval
 
 ### Example: ISR in Next.js
 
-```jsx
+```js
 // pages/posts.js
 export async function getStaticProps() {
   const posts = await fetchPosts();

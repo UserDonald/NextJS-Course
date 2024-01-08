@@ -79,7 +79,7 @@ Create new files in the `pages` directory to add more routes to your application
 
 ### Example: Adding a New Page
 
-```jsx
+```js
 // pages/about.js
 export default function About() {
   return <div>About us</div>;

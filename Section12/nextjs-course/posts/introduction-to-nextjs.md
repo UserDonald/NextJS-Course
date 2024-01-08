@@ -22,7 +22,7 @@ Next.js is an open-source React front-end development web framework that enables
 
 ### Code Snippet: Basic Next.js Page
 
-```jsx
+```js
 // pages/index.js
 import Head from 'next/head';
 import Link from 'next/link';

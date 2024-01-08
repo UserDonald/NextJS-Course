@@ -21,7 +21,7 @@ With Static Generation, the HTML is generated at build time and will be reused o
 
 #### Example: Static Generation with `getStaticProps`
 
-```jsx
+```js
 // pages/index.js
 export async function getStaticProps() {
   // Fetch data at build time
@@ -40,7 +40,7 @@ Server-Side Rendering is the approach of rendering pages on-demand, at request t
 
 #### Example: Server-Side Rendering with `getServerSideProps`
 
-```jsx
+```js
 // pages/posts/[id].js
 export async function getServerSideProps(context) {
   // Fetch data for each request
@@ -67,7 +67,7 @@ Incremental Static Regeneration (ISR) allows you to update static content after 
 
 ### Example: ISR with `revalidate`
 
-```jsx
+```js
 // pages/products.js
 export async function getStaticProps() {
   const products = await loadProducts();

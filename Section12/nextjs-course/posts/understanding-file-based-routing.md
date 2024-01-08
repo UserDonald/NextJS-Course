@@ -29,7 +29,7 @@ Next.js uses the pages inside the `pages` directory to create the routes of your
     [id].js       --> /products/:id (dynamic)
 ```
 
-Each `.js`, `.jsx`, `.ts`, or `.tsx` file inside the `pages` directory becomes a route that gets automatically processed and handled by Next.js.
+Each `.js`, `.js`, `.ts`, or `.tsx` file inside the `pages` directory becomes a route that gets automatically processed and handled by Next.js.
 
 ### Dynamic Routes
 
@@ -37,7 +37,7 @@ Dynamic routes allow for the creation of routes where the path is not known in a
 
 #### Example: Dynamic Routing
 
-```jsx
+```js
 // pages/blog/[slug].js
 import { useRouter } from 'next/router';
 
@@ -59,7 +59,7 @@ To navigate between pages, Next.js provides a `Link` component from `next/link`.
 
 #### Example: Using the Link Component
 
-```jsx
+```js
 // A navigation component with Next.js Link
 import Link from 'next/link';
 

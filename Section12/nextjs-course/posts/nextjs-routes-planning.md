@@ -58,7 +58,7 @@ pages/
 
 Use `index.js` files within subdirectories to handle the base route for that directory.
 
-```jsx
+```js
 // pages/blog/index.js
 // This file will render at the /blog route
 export default function BlogIndex() {

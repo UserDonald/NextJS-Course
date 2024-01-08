@@ -21,7 +21,7 @@ Start by creating a new Context. This is typically done in a separate file.
 
 #### Example: Creating a Context
 
-```jsx
+```js
 // context/UserContext.js
 import { createContext } from 'react';
 
@@ -36,7 +36,7 @@ Wrap your component tree with the Context Provider and pass the value you want t
 
 #### Example: Using Context Provider in `_app.js`
 
-```jsx
+```js
 // pages/_app.js
 import UserContext from '../context/UserContext';
 
@@ -59,7 +59,7 @@ Use the `useContext` hook in your components to access the Context value.
 
 #### Example: Consuming Context in a Component
 
-```jsx
+```js
 // components/Profile.js
 import React, { useContext } from 'react';
 import UserContext from '../context/UserContext';
@@ -83,7 +83,7 @@ React Context works seamlessly with Next.js. You can combine Context with Next.j
 
 ### Example: Fetching User Data in `getServerSideProps`
 
-```jsx
+```js
 // pages/index.js
 export async function getServerSideProps() {
   const user = await fetchUserData();

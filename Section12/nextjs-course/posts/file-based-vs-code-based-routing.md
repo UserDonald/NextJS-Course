@@ -23,7 +23,7 @@ Next.js takes a convention-over-configuration approach to routing with its file-
 
 ### Example: File-based Routing
 
-```jsx
+```js
 // pages/about.js
 function About() {
   return <h1>About Us</h1>;
@@ -46,7 +46,7 @@ In a more traditional React setup, routing is handled by a package such as React
 
 ### Example: Code-based Routing
 
-```jsx
+```js
 // App.js with React Router
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Home';

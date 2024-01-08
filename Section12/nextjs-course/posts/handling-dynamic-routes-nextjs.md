@@ -33,7 +33,7 @@ When rendering dynamic routes, it's often necessary to fetch data based on the d
 
 #### Example: Static Generation with Dynamic Routes
 
-```jsx
+```js
 // pages/posts/[id].js
 export async function getStaticPaths() {
   const paths = await getAllPostIds();
@@ -83,7 +83,7 @@ Catch-all routes are used to match a segment that contains multiple parts. They 
 
 #### Example: Catch-all Route
 
-```jsx
+```js
 // pages/posts/[...slug].js
 // This will match /posts/a, but also /posts/a/b, /posts/a/b/c, and so on.
 ```

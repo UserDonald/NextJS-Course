@@ -23,7 +23,7 @@ React's main concept is the creation of components, which are independent and re
 
 ### Example: Basic React Component
 
-```jsx
+```js
 // A simple React component
 import React from 'react';
 
@@ -42,7 +42,7 @@ User interfaces built with React are organized into components that manage their
 
 ### Example: Composing Components
 
-```jsx
+```js
 // Compose components to form a more complex UI
 import React from 'react';
 import Welcome from './Welcome';

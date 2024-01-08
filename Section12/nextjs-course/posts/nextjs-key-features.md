@@ -23,7 +23,7 @@ Server-Side Rendering is one of the core strengths of Next.js. It allows pages t
 
 ### Example: Using SSR in Next.js
 
-```jsx
+```js
 // This is a simple example of a page that uses getServerSideProps to fetch data server-side.
 
 // pages/ssr-page.js
@@ -57,7 +57,7 @@ Static Site Generation is another key feature where pages are generated at build
 
 ### Example: Using SSG in Next.js
 
-```jsx
+```js
 // This is a simple example of a page that uses getStaticProps to fetch data at build time.
 
 // pages/index.js
@@ -91,7 +91,7 @@ Next.js uses the filesystem as the primary method for routing. This approach sim
 
 ### Example: File-Based Routing
 
-```jsx
+```js
 // The file system layout translates directly to the route structure.
 
 // pages/index.js maps to the / route
@@ -111,7 +111,7 @@ Next.js allows you to create API endpoints as a part of your Next.js application
 
 ### Example: API Route
 
-```jsx
+```js
 // pages/api/hello.js
 export default function handler(req, res) {
   res.status(200).json({ message: 'Hello from Next.js!' });

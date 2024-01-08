@@ -21,7 +21,7 @@ Next.js provides a `<Head>` component to easily include meta tags and other elem
 
 #### Example: Customizing `<Head>` for SEO
 
-```jsx
+```js
 // pages/index.js
 import Head from 'next/head';
 
@@ -51,7 +51,7 @@ Create components that can be reused across different pages, such as headers, fo
 
 #### Example: Shared Layout Component
 
-```jsx
+```js
 // components/Layout.js
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -79,7 +79,7 @@ The `Image` component optimizes image loading and reduces the amount of data tra
 
 #### Example: Optimizing Images with `Image`
 
-```jsx
+```js
 // pages/index.js
 import Image from 'next/image';
 

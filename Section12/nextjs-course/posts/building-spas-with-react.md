@@ -23,7 +23,7 @@ In a SPA, all necessary HTML, JavaScript, and CSS are either retrieved with a si
 
 ### Example: Basic SPA Structure with React
 
-```jsx
+```js
 // src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -56,7 +56,7 @@ React Router is a standard library for routing in React. It enables the navigati
 
 #### Example: React Router Setup
 
-```jsx
+```js
 // src/components/Navbar.js
 import { Link } from 'react-router-dom';
 
@@ -76,7 +76,7 @@ State management is crucial in SPAs. React's built-in `useState` hook or externa
 
 #### Example: useState Hook
 
-```jsx
+```js
 // src/components/Counter.js
 import React, { useState } from 'react';
 
@@ -98,7 +98,7 @@ React components have a lifecycle, and React provides hooks, such as `useEffect`
 
 #### Example: useEffect Hook
 
-```jsx
+```js
 // src/components/UserProfile.js
 import React, { useEffect, useState } from 'react';
 

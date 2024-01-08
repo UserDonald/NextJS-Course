@@ -23,7 +23,7 @@ Both React and Next.js embrace a component-based architecture, which breaks down
 
 ### Example: Creating a Simple Component
 
-```jsx
+```js
 // components/Greeting.js
 export default function Greeting({ name }) {
   return <div>Hello, {name}!</div>;
@@ -54,7 +54,7 @@ Next.js builds on React's foundation to provide an enhanced development experien
 
 ### Example: Hybrid Pages in Next.js
 
-```jsx
+```js
 // pages/static-page.js
 export function getStaticProps() {
   // Static Generation: Fetch data at build time
@@ -86,7 +86,7 @@ React hooks are fully supported in Next.js. You can use `useState`, `useEffect`,
 
 ### Example: Using React Hooks in Next.js
 
-```jsx
+```js
 // pages/index.js
 import { useState, useEffect } from 'react';
 

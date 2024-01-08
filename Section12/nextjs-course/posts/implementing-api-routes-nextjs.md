@@ -21,7 +21,7 @@ Create a new file inside the `pages/api` directory, and export a default functio
 
 #### Example: A Simple API Route
 
-```jsx
+```js
 // pages/api/greet.js
 export default function handler(req, res) {
   res.status(200).json({ message: 'Hello from your API Route!' });
@@ -36,7 +36,7 @@ API routes can handle different HTTP methods, such as GET, POST, PUT, DELETE, et
 
 ### Example: Handling Multiple Methods
 
-```jsx
+```js
 // pages/api/user.js
 export default function handler(req, res) {
   switch (req.method) {
@@ -61,7 +61,7 @@ Frontend components can interact with these API routes just like any other exter
 
 ### Example: Fetching Data from the Frontend
 
-```jsx
+```js
 // pages/index.js
 import { useState, useEffect } from 'react';
 
@@ -88,7 +88,7 @@ You can also integrate your API routes with a database to handle data persistenc
 
 ### Example: Database Integration
 
-```jsx
+```js
 // pages/api/products.js
 import db from '../../lib/db'; // Assume db is a database instance
 
