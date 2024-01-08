@@ -1,9 +1,12 @@
 import ReactMarkdown from 'react-markdown';
-import classes from './post-content.module.css';
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import atomDark from 'react-syntax-highlighter/dist/cjs/styles/prism/atom-dark';
+import js from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
+
 import PostHeader from './post-header';
-import Image from 'next/image';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import classes from './post-content.module.css';
+
+SyntaxHighlighter.registerLanguage('js', js);
 
 function PostContent(props) {
   const { post } = props;
@@ -44,7 +47,6 @@ function PostContent(props) {
     code(code) {
       const { className, children } = code;
       const language = className ? className.split('-')[1] : 'javascript'; // Assuming 'className' is like 'language-js'
-      console.log(className);
       return (
         <SyntaxHighlighter
           style={atomDark}
