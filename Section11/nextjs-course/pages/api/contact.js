@@ -1,5 +1,5 @@
 function handler(req, res) {
-  if (req.method === 'Post') {
+  if (req.method === 'POST') {
     const { email, name, message } = req.body;
 
     if (
