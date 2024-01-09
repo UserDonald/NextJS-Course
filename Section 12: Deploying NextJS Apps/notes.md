@@ -51,6 +51,3 @@ When preparing for deployment, it's crucial to follow a structured approach to e
 4. **Final Review and Deployment:**
    - Repeat the above steps as needed for thoroughness.
    - Proceed with deployment when you are confident that the application is fully ready.
-
-Next Config
-- 
