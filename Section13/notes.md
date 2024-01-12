@@ -42,7 +42,3 @@ This guide aims to provide a clear and concise understanding of how user authent
 ### Controlling Page Access
 
 - Implement access controls to restrict unauthorized users from accessing certain pages or resources. This can be achieved by validating the user's authentication token or session identifier for each protected resource request.
-
----
-
-This guide aims to provide a foundational understanding of user authentication in NextJS applications. By following the outlined practices, developers can ensure secure and efficient user authentication and access control in their applications.
