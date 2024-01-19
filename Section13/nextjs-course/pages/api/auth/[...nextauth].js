@@ -3,10 +3,11 @@ import { connectToDatabase } from '../../../lib/db';
 import { verifyPassword } from '../../../lib/auth';
 import Credentials from 'next-auth/providers/credentials';
 
-export default NextAuth({
+export const authOptions = {
   session: {
     jwt: true,
   },
+  secret: process.env.AUTH_SECRET,
   providers: [
     Credentials({
       name: 'Credentials',
@@ -40,4 +41,6 @@ export default NextAuth({
       },
     }),
   ],
-});
+};
+
+export default NextAuth(authOptions);
